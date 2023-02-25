@@ -1,10 +1,13 @@
-from helper import validate_and_execute, user_input_message
+import openpyxl
 
-user_input = ""
-while user_input != "exit":
-    user_input = input(user_input_message)
-    days_and_unit = user_input.split(":")
-    print(days_and_unit)
-    days_and_unit_dictionary = {"days": days_and_unit[0], "unit": days_and_unit[1]}
-    print(days_and_unit_dictionary)
-    validate_and_execute()
+inv_file = openpyxl.load_workbook("inventory.xlsx")
+product_list = inv_file["Sheet1"]
+
+
+products_per_supplier = {}
+
+
+print(product_list.max_row)
+
+
+for product_row in product_list.max_row
